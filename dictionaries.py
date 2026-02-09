@@ -10,3 +10,14 @@ students ={
     "Ruth": [88, 82, 91],
     "John": [80, 85, 87]
 }
+
+# calculate average score for each student
+averages ={}
+for student, scores in students.items():
+    averages[student] = sum(scores) / len(scores)
+    
+print("Average Scores:",averages)
+
+# find student with highest average
+highest_avg_student = max(averages, key=averages.get)
+print("Student with highest average:", highest_avg_student) 
