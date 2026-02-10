@@ -21,3 +21,9 @@ print("Is Student:",type(is_student))
 print("Age + 5=", age+5)
 print("Height * 2=", height*2)
 print("String Concatenation:","Hello My name is ", name)
+
+
+# create program that prints each character of string on new line 
+
+
+    
