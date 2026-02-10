@@ -1,7 +1,6 @@
 for person in range(1, 4):
     print(f"\n--- Person {person} ---")
 
-    # Age input
     age = int(input("Enter your age: "))
     if age > 20:
         age_ok = True
@@ -16,7 +15,6 @@ for person in range(1, 4):
         age_app = False
         print("You are too young")
 
-    # Height input
     height = float(input("Enter your height in meters: "))
     if height > 1.6:
         height_ok = True
@@ -25,7 +23,6 @@ for person in range(1, 4):
         height_ok = False
         print("Too short")
 
-    # Weight input
     weight = float(input("Enter your weight in kg: "))
     if weight > 45:
         weight_ok = True
@@ -34,24 +31,14 @@ for person in range(1, 4):
         weight_ok = False
         print("Underweight")
 
-    # Physique input with 3 attempts
-    attempts = 0
-    physique_ok = False
-    valid_physiques = ["slim", "thick", "chubby"]
+    physique = input("Enter your physique (slim, thick, chubby): ").lower()
+    if physique == "slim" or physique == "thick" or physique == "chubby":
+        physique_ok = True
+        print("Physique OK")
+    else:
+        physique_ok = False
+        print("Invalid physique")
 
-    while attempts < 3 and not physique_ok:
-        physique = input("Enter your physique (slim, thick, chubby): ").lower()
-        if physique in valid_physiques:
-            physique_ok = True
-            print("Physique OK")
-        else:
-            attempts += 1
-            if attempts < 3:
-                print(f"Invalid physique. Try again ({3 - attempts} attempts left).")
-            else:
-                print("Too many invalid attempts. Try next time.")
-
-    # Phone input
     phone = input("Enter your phone number (10 digits): ")
     if len(phone) == 10 and phone.isdigit():
         phone_ok = True
@@ -62,7 +49,7 @@ for person in range(1, 4):
 
     # Final decision
     if age_ok and height_ok and weight_ok and physique_ok and phone_ok:
-        print("You are eligible to date me")
+        print(" You are eligible to date me")
     elif age_app and height_ok and weight_ok and physique_ok and phone_ok:
         print("ℹ You can join the dating app")
     else:
